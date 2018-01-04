@@ -28,7 +28,7 @@ class ChannelConfig(val helloService: HelloService) {
     }
 
     @ServiceActivator(inputChannel = "inputChannel", outputChannel = "outputChannel")
-    fun foo(input : String) : String {
+    fun activate(input : String) : String {
         LOG.info("Receive input " + input)
         return helloService.sayHello(input)
     }
